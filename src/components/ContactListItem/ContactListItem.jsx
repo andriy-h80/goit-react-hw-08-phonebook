@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { ContactsListItemStyled, ContactName, ButtonDelete, ButtonEdit } from './ContactListItem.styled';
 import { deleteContact, updateContact } from "../../redux/contacts/operations";
 
-const ContactListItem = ({ contactId, name, number }) => {
+const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(contactId));
-  const handleEdit = () => dispatch(updateContact(contactId));
+  const handleDelete = () => dispatch(deleteContact(id));
+  const handleEdit = () => dispatch(updateContact(id));
 
   return (
     <ContactsListItemStyled>
@@ -24,7 +24,7 @@ const ContactListItem = ({ contactId, name, number }) => {
 };
 
 ContactListItem.propTypes = {
-  contactId: PropTypes.string,
+  id: PropTypes.string,
   name: PropTypes.string,
   number: PropTypes.string,
 };

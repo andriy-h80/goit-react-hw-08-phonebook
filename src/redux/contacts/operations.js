@@ -9,7 +9,7 @@ export const fetchContacts = createAsyncThunk(
   // тому що в цій операції він нам не потрібен
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get("/contacts");
+      const response = await axios.get("/contacts"); 
     // При успішному запиті повертаємо проміс із даними
       return response.data;
     } catch (error) {
@@ -34,25 +34,24 @@ export const addContact = createAsyncThunk(
 
 export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
-  async (contactId, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
-      const response = await axios.delete(`/contacts/${contactId}`);
+      const response = await axios.delete(`/contacts/${id}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-  );
+);
   
   export const updateContact = createAsyncThunk(
     'contacts/updateContact',
-    async ({ contactId, name, number }, thunkAPI) => {
+    async ({ id, name, number }, thunkAPI) => {
       try {
-        const { data } = await axios.patch(`/contacts/${contactId}`, { name, number });
+        const { data } = await axios.patch(`/contacts/${id}`, { name, number });
         return data;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
       }
     }
   );
-  
