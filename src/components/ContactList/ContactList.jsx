@@ -27,12 +27,12 @@ const ContactList = () => {
       {contacts.filter(contact => 
         contact.name.toLowerCase().includes(filteredContacts.toLowerCase()))
         .sort((a, b) => a.name.localeCompare(b.name))
-        .map(({ id, name, phone }) => (
+        .map(({ id, name, number }) => (
         <ContactListItem
           key={id}
           id={id}
           name={name}
-          phone={phone}
+          number={number}
          >
         </ContactListItem>
       ))}

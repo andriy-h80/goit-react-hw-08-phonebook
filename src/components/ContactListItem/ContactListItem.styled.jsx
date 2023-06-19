@@ -17,3 +17,11 @@ export const ButtonDelete = styled.button`
     border-radius: 5px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 `;
+
+export const ButtonEdit = styled.button`
+    font-weight: bold;
+    margin-left: auto;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+`;

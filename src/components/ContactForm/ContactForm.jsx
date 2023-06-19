@@ -10,7 +10,7 @@ const ContactForm = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        const { name, phone } = event.currentTarget;
+        const { name, number } = event.currentTarget;
 
         const isContactExist = contacts.some(
             contact => contact.name.toLowerCase() === name.value.toLowerCase()
@@ -22,7 +22,7 @@ const ContactForm = () => {
             return;
         }
 
-        dispatch(addContact({name: name.value, phone: phone.value}));
+        dispatch(addContact({name: name.value, number: number.value}));
         event.currentTarget.reset();
       };
 
@@ -39,15 +39,15 @@ const ContactForm = () => {
             id="name"
             />
 
-            <label htmlFor="phone">
+            <label htmlFor="number">
                 Number: 
             </label>
             <input
             type="tel"
-            name="phone"
+            name="number"
             pattern="^[0-9]+$"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +" required
-            id="phone"
+            id="number"
             />  
 
             <ButtonAdd type='submit' aria-label="Add contact">Add contact</ButtonAdd>          

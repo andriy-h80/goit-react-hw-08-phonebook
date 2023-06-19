@@ -12,7 +12,7 @@ const styles = {
     },
   };
   
-  export default function Home() {
+  const HomePage = () => {
     return (
       <div style={styles.container}>
         <h1 style={styles.title}>
@@ -24,4 +24,6 @@ const styles = {
       </div>
     );
   }
+  
+  export default HomePage;
   

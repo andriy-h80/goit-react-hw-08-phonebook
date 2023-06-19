@@ -7,7 +7,7 @@ import { fetchContacts } from '../redux/contacts/operations';
 import { selectIsLoading } from '../redux/contacts/selectors';
 import Loader from '../components/Loader/Loader';
 
-export default function Tasks() {
+const ContactsPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
 
@@ -26,3 +26,5 @@ export default function Tasks() {
     </>
   );
 }
+
+export default ContactsPage;
