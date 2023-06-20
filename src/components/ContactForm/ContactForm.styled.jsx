@@ -7,10 +7,10 @@ export const Form = styled.form`
   padding: 15px;
   gap: 20px;
   width: 400px;
-  // box-sizing: border-box;
   border: 1px solid;
   border-radius: 5px;
   font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
 export const ButtonAdd = styled.button`
