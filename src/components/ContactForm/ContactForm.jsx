@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import { selectContacts } from '../../redux/contacts/selectors';
+import { toast } from 'react-hot-toast';
 import { Form, ButtonAdd } from './ContactForm.styled';
 
 const ContactForm = () => {
@@ -17,7 +18,8 @@ const ContactForm = () => {
         );
         
         if (isContactExist) {
-            alert(`${name.value} is already in contacts`);
+            // alert(`${name.value} is already in contacts`);
+            toast.error(`${name.value} is already in contacts`);
             event.currentTarget.reset();
             return;
         }

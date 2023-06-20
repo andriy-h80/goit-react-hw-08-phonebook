@@ -6,5 +6,4 @@ export const Header = styled.div`
     align-items: center;
     margin-bottom: 16px;
     border-bottom: 1px solid #2a363b;
-    // border-bottom: 1px solid #eeea9e;
 `;

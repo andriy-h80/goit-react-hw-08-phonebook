@@ -5,6 +5,7 @@ import { selectContacts, selectIsLoading, selectError, selectFilter } from "../.
 import ContactListItem from '../ContactListItem/ContactListItem';
 import { ContactListStyled } from './ContactList.styled';
 import Loader from '../Loader/Loader';
+import Filter from "../Filter/Filter";
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -19,11 +20,11 @@ const ContactList = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-
   return (
     <ContactListStyled>
       {isLoading && <Loader />}
       {error && <p>{"Oops, mistake... Please try again"}</p>}
+      <Filter />
       {contacts.filter(contact => 
         contact.name.toLowerCase().includes(filteredContacts.toLowerCase()))
         .sort((a, b) => a.name.localeCompare(b.name))

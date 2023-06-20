@@ -1,7 +1,6 @@
 import { Container, Title, HeroImage } from './Greeting.styled.jsx';
 import phonesImage from './phones.jpg';
 
-
 export const Greeting = () => {
     return (
         <Container>
@@ -11,5 +10,4 @@ export const Greeting = () => {
           <HeroImage src={phonesImage} width='360' alt='phone' />
         </Container>
       );
-
 }
